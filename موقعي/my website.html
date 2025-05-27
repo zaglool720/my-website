@@ -1,0 +1,330 @@
+<!DOCTYPE html> 
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>زغلول - الموقع الشخصي</title>
+<style>
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    overflow-x: hidden;
+    line-height: 1.8;
+  }
+  nav {
+    position: fixed;
+    top: 0; right: 0; left: 0;
+    background: rgba(11,12,16,0.95);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    z-index: 1000;
+  }
+  nav .logo {
+    font-size: 1.8rem;
+    color: #66fcf1;
+    font-weight: bold;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  nav ul li a {
+    color: #c5c6c7;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #45a29e;
+  }
+  header {
+    height: 100vh;
+    background: url('photo_83-1.jpg') center center/cover no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(11,12,16,0.85);
+  }
+  header .content {
+    position: relative;
+    max-width: 700px;
+    color: #66fcf1;
+    z-index: 1;
+    text-align: center;
+  }
+  header .content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    animation: fadeInDown 1.2s ease forwards;
+  }
+  header .content p {
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+    animation: fadeInUp 1.2s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+  }
+  header .content button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: #45a29e;
+    border: none;
+    border-radius: 30px;
+    color: #0b0c10;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    animation: fadeInUp 1.2s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+  }
+  header .content button:hover {
+    background: #66fcf1;
+    color: #0b0c10;
+  }
+  @keyframes fadeInDown {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes fadeInUp {
+    to {opacity: 1; transform: translateY(0);}
+  }
+  main {
+    max-width: 900px;
+    margin: 80px auto 50px auto;
+    padding: 0 20px;
+    color: #c5c6c7;
+  }
+  main h2 {
+    color: #66fcf1;
+    margin-bottom: 35px;
+    border-bottom: 3px solid #45a29e;
+    padding-bottom: 10px;
+  }
+  main p {
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    text-align: justify;
+  }
+  .photo-block {
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .photo-block img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 3px solid #45a29e;
+    box-shadow: 0 0 15px #45a29e88;
+    transition: transform 0.3s ease;
+  }
+  .photo-block img:hover {
+    transform: scale(1.07);
+  }
+  section#contact {
+    margin-top: 60px;
+  }
+  .contact-info p {
+    font-size: 1.25rem;
+    margin: 18px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .contact-info a {
+    color: #66fcf1;
+    text-decoration: none;
+  }
+  footer {
+    background: #1f2833;
+    text-align: center;
+    color: #45a29e;
+    padding: 20px;
+    font-size: 1rem;
+  }
+  @media(max-width: 768px) {
+    header .content h1 {
+      font-size: 3.5rem;
+    }
+    header .content p {
+      font-size: 1.2rem;
+    }
+    .photo-block {
+      flex-direction: column;
+      align-items: center;
+    }
+    .photo-block img {
+      width: 90%;
+      height: auto;
+      max-height: 350px;
+    }
+  }
+</style>
+<script>
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">زغلول</div>
+  <ul>
+    <li><a href="#about">عنّي</a></li>
+    <li><a href="#skills">مهاراتي</a></li>
+    <li><a href="#projects">مشاريعي</a></li>
+    <li><a href="#education">تعليمي</a></li>
+    <li><a href="#hobbies">هواياتي</a></li>
+    <li><a href="#values">قيم ومبادئ</a></li>
+    <li><a href="#contact">تواصل</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="content">
+    <h1>زغلول</h1>
+    <p>مرحبًا بك في موقعي الشخصي! اسمي زغلول، وأنا مبرمج ومطور مواقع وتطبيقات أعمل بشغف منذ سنوات طويلة في عالم التقنية.</p>
+    <button onclick="scrollToSection('about')">اكتشف أكثر</button>
+  </div>
+</header>
+
+<main>
+
+  <section id="about">
+    <h2>عنّي<img src="https://img.icons8.com/color/48/000000/user.png" alt="عني" />
+</h2>
+    <p>اسمي أحمد السيد سعيد، وشهرتي الناس بينادوني بزغلول، والقب ده طلع عليا من وانا في أولى إعدادي.</p>
+    <p>في الصف الثالث الإعدادي في الترم الأول، كنت جايب 132 من 140 وكانت درجة رائعة. في الترم الثاني حصلت لي ظروف وجبت في السنة كلها 255 من 280، ودخلت أولى ثانوي في مدرسة WE للتكنولوجيا التطبيقية في فرع دمنهور.</p>
+    <p>كانت أول سنة لي فيها مشاكل، بس كنت حابب تخصصها. في الترم الأول، المدرسين كانوا شايفين إني مشاغب ومختلط بالصف الثاني أكثر من الصف الأول، رغم أني كنت شايف ده ميزة مش عيب. الترم الأول عدى وكنت ساقط في مادتين: الفيزيكس والرياضيات، بس المدرسين كانوا شايفين إني مميز في مجال الكمبيوتر سواء في العملي (البرمجة) أو عملي ICT.</p>
+    <p>بشهادة كل المدرسين، كنت من أفضل الناس اللي بتشتغل على برنامج PowerPoint وبرنامج Word. وحاليًا في الإجازة، أنا شغال على برنامج Photoshop.</p>
+    <p>في الترم الثاني بدأت أتحسن وبعدت عن صحاب المصلحة اللي كانوا بيجبولي مشاكل، وعملت لهم بلوك نهائي من حياتي، وبقيت مصاحب اتنين بس من الصف الثاني: مؤمن الوكيل، وبيقولوا له "عسلية"، والاني أحمد سعد، وهو الفورمة بتاعتنا وحبيبي ومسجل أخويا القصير ❤.</p>
+    <p>بس حصلت مشكلة ماكنتش في الحسبان، وأنا مغلطتش، واحد من الصف الثاني في الامتحانات كتبلي شيمة في الورقة اللي فيها اسمي ورقم جلوسي، وسبب لي مشكلة برفدي من المدرسة. إن شاء الله خير، وهانرجع تاني، بس المشاكل دي ما حصلتش والله.</p>
+    <p>عندي أمل إن شاء الله إني هرجع المدرسة، وهعمل اللي أنا عايزه وهنجح بس.</p>
+
+    <div class="photo-block">
+      <img src="photo_83-2.jpg" alt="عنّي صورة 1" />
+      <img src="photo_83-4.jpg" alt="عنّي صورة 3" />
+      <img src="photo_83-5.jpg" alt="عنّي صورة 4" />
+      <img src="photo_83-18.jpg" alt="عنّي صورة 5" />
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>مهاراتي<img src="https://img.icons8.com/color/48/000000/settings-3.png" alt="مهاراتي" />
+</h2>
+    <p>أتقن البرمجة بلغة Python ولغات برمجة أخرى. أجيد استخدام برامج Office مثل Word وPowerPoint وأعمل على تطوير مهاراتي في Photoshop.</p>
+    <p>أحب تطوير المواقع والتطبيقات وأتطلع دائما لتعلم كل جديد في عالم التقنية.</p>
+
+    <div class="photo-block">
+      <img src="photo_83-6.jpg" alt="مهاراتي صورة 1" />
+      <img src="photo_83-7.jpg" alt="مهاراتي صورة 2" />
+      <img src="photo_83-8.jpg" alt="مهاراتي صورة 3" />
+      <img src="photo_83-20.jpg" alt="مهاراتي صورة 3" />
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2><img src="https://img.icons8.com/color/48/000000/project.png" alt="مشاريعي" />
+مشاريعي</h2>
+    <p>طورت عدة مشاريع برمجية صغيرة ومتوسطة، منها مواقع إلكترونية وتطبيقات بسيطة، بالإضافة إلى بعض الألعاب التعليمية.</p>
+    <p>كل مشروع يعكس شغفي بالتعلم والابتكار والتطوير المستمر.</p>
+
+    <div class="photo-block">
+      <img src="photo_83-10.jpg" alt="مشاريعي صورة 2" />
+      <img src="photo_83-11.jpg" alt="مشاريعي صورة 3" />
+      <img src="photo_83-12.jpg" alt="مشاريعي صورة 4" />
+      <img src="photo_83-24.jpg" alt="مشاريعي صورة 4" />
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>تعليمي<img src="https://img.icons8.com/color/48/000000/graduation-cap.png" alt="تعليمي" />
+</h2>
+    <p>أنا طالب في الصف الأول الثانوي، وأدرس في مدرسة WE للتكنولوجيا التطبيقية - فرع دمنهور.</p>
+    <p>أركز على تعلم البرمجة وتقنيات الحاسوب، وأخطط لتطوير نفسي في مجال التكنولوجيا الحديثة.</p>
+
+    <div class="photo-block">
+      <img src="photo_83-13.jpg" alt="تعليمي صورة 1" />
+      <img src="photo_83-14.jpg" alt="تعليمي صورة 2" />
+      <img src="photo_83-15.jpg" alt="تعليمي صورة 3" />
+      <img src="photo_83-22.jpg" alt="تعليمي صورة 3" />
+
+    </div>
+  </section>
+
+  <section id="hobbies">
+    <h2>هواياتي<img src="https://img.icons8.com/color/48/000000/paint-palette.png" alt="هواياتي" />
+</h2>
+    <p>أحب القراءة في مجالات التقنية والبرمجة، كما أحب ممارسة الرياضة واللعب بألعاب الفيديو في أوقات الفراغ.</p>
+    <p>كما أحب تعلم مهارات جديدة باستمرار مثل التصميم بالفوتوشوب.</p>
+
+    <div class="photo-block">
+
+      <img src="photo_83-19.jpg" alt="هواياتي صورة 3" />
+      <img src="photo_83-1.jpg" alt="هواياتي صورة 4" />
+            <img src="photo_83-16.jpg" alt="هواياتي صورة 5" />
+           <img src="photo_83-23.jpg"  alt="هواياتي صورة 5" />
+    </div>
+  </section>
+
+  <section id="values">
+    <h2>قيم ومبادئ<img src="https://img.icons8.com/color/48/000000/handshake.png" alt="قيم ومبادئ" />
+</h2>
+    <p>أؤمن بأهمية الأمانة والإخلاص في العمل، وبضرورة التعاون والمساعدة بين الجميع.</p>
+    <p>أؤمن أيضاً بأن التعلم المستمر هو مفتاح النجاح في أي مجال.</p>
+
+    <div class="photo-block">
+      <img src="photo_83-4.jpg" alt="قيم ومبادئ صورة 2" />
+      <img src="photo_83-5.jpg" alt="قيم ومبادئ صورة 3" />
+      <img src="photo_83-6.jpg" alt="قيم ومبادئ صورة 4" />
+            <img src="photo_83-17.jpg" alt="هواياتي صورة 1" />
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>تواصل</h2>
+    <div class="contact-info">
+      <p><img src="https://img.icons8.com/color/48/000000/new-post.png" alt="البريد الإلكتروني" />
+ البريد الإلكتروني: <a href="mailto:zaghloul@example.com">ahmed.elsaid.24003@gmail.com</a></p>
+      <p><a href="tel:+201098642203" target="_blank">
+  <img src="https://img.icons8.com/color/48/000000/phone.png" alt="هاتف" />
+</a>
+ الهاتف: <a href="tel:+201234567890">01098642203</a></p>
+      <p><img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="واتساب" />
+ واتساب: <a href= target="_blank">01098642203</a></p>
+      <p><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="فيسبوك" />
+ فيسبوك: <a href="https://facebook.com/zaghloul" target="_blank">ahmedzaglool.face@gmail.com</a></p>
+      <p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  جميع الحقوق محفوظة+دعوة حلوة من قلبك&copy; 2025 - 
+  زغلول❤
+  اخويا القصير❤
+  عسلية❤
+</footer>
+
+</body>
+</html>
